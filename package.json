@@ -1,0 +1,14 @@
+{
+  "name": "ticket-boy",
+  "version": "0.0.11",
+  "description": "A booking system that expires subscriptions with in a given time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ramachandra jr",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.9.1"
+  }
+}
