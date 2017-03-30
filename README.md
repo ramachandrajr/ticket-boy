@@ -42,6 +42,11 @@ To get started start with the following code:
  	});
 ```
 
+### Functions
+
+#### TicketBoy.prototype.config
+
+
 
 
 

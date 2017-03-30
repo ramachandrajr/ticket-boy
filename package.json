@@ -1,6 +1,6 @@
 {
   "name": "ticket-boy",
-  "version": "0.0.12",
+  "version": "0.0.121",
   "description": "A booking system that expires subscriptions with in a given time.",
   "main": "index.js",
   "scripts": {
