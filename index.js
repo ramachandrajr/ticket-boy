@@ -44,11 +44,11 @@ TicketBoy.prototype.config = function(config) {
  * @method createTicket
  * Creates a new ticket.
  *
- * @param   { String } [tag] - The hash tag to be put on an Object.
- * @param 	{ String | Date } start	- The start of a booking.
- * @param 	{ String | Date } end -	The end of a booking.
- * @param 	{ Object } [Object] - An additional Object to save on a ticket. 
- * @returns 	{ Promise }	Resolves if new ticket can be created successfully with newly created Object.
+ * @param   { String } 			[tag] - 	The hash tag to be put on an Object.
+ * @param 	{ String | Date } 	start	- 	The start of a booking.
+ * @param 	{ String | Date } 	end -		The end of a booking.
+ * @param 	{ Object } 			[Object] - 	An additional Object to save on a ticket. 
+ * @returns { Promise }						Resolves if new ticket can be created successfully with newly created Object.
  */
 TicketBoy.prototype.createTicket = function(tag, start, end, Object) {
 	var ticket = new Ticket();
@@ -77,7 +77,7 @@ TicketBoy.prototype.createTag = function() {
  * Checks if a given ticket is expired.
  *
  * @param 	{ mongoose.Schema.Types.ObjectId } mongooseId - Mongoose _id of the ticket.
- * @returns 	{ Promise }	Resolves with true if 'end' date Object is of a higher date than now.
+ * @returns { Promise }										Resolves with true if 'end' date Object is of a higher date than now.
  */
 TicketBoy.prototype.isExpired = function(mongooseId) {
 	return new Promise((resolve, reject) => {
@@ -98,7 +98,7 @@ TicketBoy.prototype.isExpired = function(mongooseId) {
  * Gets the timeperiod between the start and the end of a Ticket Object.
  *
  * @param 	{ mongoose.Schema.Types.ObjectId } mongooseId - Mongoose _id of the ticket.
- * @returns 	{ Promise }	Difference between start and end in milliseconds.
+ * @returns { Promise }										Difference between start and end in milliseconds.
  */
 TicketBoy.prototype.getPeriod = function(mongooseId) {
 	return new Promise((resolve, reject) => {
@@ -120,9 +120,9 @@ TicketBoy.prototype.getPeriod = function(mongooseId) {
  * Tickets with that tag and returns true if booked.
  * Warning: This will return the first Object that contains the given time instance.
  *
- * @param { String } tag - Tag on which elements will be searched.
- * @param { Date } time - Time Object, we'll check if it is booked for this time instance.
- * @returns { Promise } Returns an Object with booked: true with the whole found ticket if something is found. Else it passes in booked: false.
+ * @param 	{ String } 	tag - 	Tag on which elements will be searched.
+ * @param 	{ Date } 	time - 	Time Object, we'll check if it is booked for this time instance.
+ * @returns { Promise } 		Returns an Object with booked: true with the whole found ticket if something is found. Else it passes in booked: false.
  */
 TicketBoy.prototype.isBooked = function(tag, time) {
 	return new Promise((resolve, reject) => {
@@ -148,8 +148,8 @@ TicketBoy.prototype.isBooked = function(tag, time) {
  * @method findAll
  * Finds all Ticket Objects having the given tag.
  *
- * @param { String } tag - Tag on which elements will be found.
- * @returns { Promise } Resolves with found Tickets.
+ * @param 	{ String } 	tag - 	Tag on which elements will be found.
+ * @returns { Promise } 		Resolves with found Tickets.
  */
 TicketBoy.prototype.findAll = function(tag) {
 	return new Promise((resolve, reject) => {
@@ -174,9 +174,9 @@ TicketBoy.prototype.findAll = function(tag) {
  * @method extendTicket
  * Extends a Ticket's end time.
  *
- * @param 	{ mongoose.Schema.Types.ObjectId } mongooseId - Mongoose _id of the Object to extend timeperiod on.
- * @param 	{ String | Date } [end] - The end of a booking.
- * @returns 	{ Promise }	Resolves with extended Ticket.
+ * @param 		{ mongoose.Schema.Types.ObjectId } 	mongooseId - 	Mongoose _id of the Object to extend timeperiod on.
+ * @param 		{ String | Date } 					[end] - 		The end of a booking.
+ * @returns 	{ Promise }											Resolves with extended Ticket.
  */
 TicketBoy.prototype.extendTicket = function(mongooseId, end) {
 	return new Promise((resolve, reject) => {
@@ -199,12 +199,12 @@ TicketBoy.prototype.extendTicket = function(mongooseId, end) {
  * @method updateTicket
  * Updates a Ticket with some new data.
  *
- * @param   { mongoose.Schema.Types.ObjectId } 	mongooseId - Mongoose _id of the Object to extend.
- * @param   { String } [tag] 	   - The hash tag to be put on an Object. 
- * @param 	{ String | Date } [start]    - The start of a booking.
- * @param 	{ String | Date } [end] 	   - The end of a booking.
- * @param 	{ Object } [Object]   - An additional Object to save on a ticket. 
- * @returns 	{ Promise }	Resolves with extended ticket.
+ * @param   	{ mongoose.Schema.Types.ObjectId } 	mongooseId - 	Mongoose _id of the Object to extend.
+ * @param   	{ String }							[tag] 	   - 	The hash tag to be put on an Object. 
+ * @param 		{ String | Date }					[start]    - 	The start of a booking.
+ * @param 		{ String | Date }					[end] 	   - 	The end of a booking.
+ * @param 		{ Object }							[Object]   - 	An additional Object to save on a ticket. 
+ * @returns 	{ Promise }											Resolves with extended ticket.
  */
 TicketBoy.prototype.updateTicket = function(mongooseId, tag, start, end, obj) {
 	return new Promise((resolve, reject) => {
@@ -233,9 +233,9 @@ TicketBoy.prototype.updateTicket = function(mongooseId, tag, start, end, obj) {
  * @method addTag
  * Adds a given 'tag' to the ticket Object.
  *
- * @param 	{ mongoose.Schema.Types.ObjectId } mongooseId - Mongoose _id of Ticket Object to add tag to.
- * @param 	{ String } tag - Tag to add to Ticket Object.
- * @returns  { Promise } Resolves with updated Ticket.
+ * @param 	{ mongoose.Schema.Types.ObjectId } 	mongooseId - 	Mongoose _id of Ticket Object to add tag to.
+ * @param 	{ String } 							tag - 			Tag to add to Ticket Object.
+ * @returns  { Promise } 										Resolves with updated Ticket.
  */
 TicketBoy.prototype.addTag = function(mongooseId, tag) {
 	return new Promise((resolve, reject) => {
@@ -264,8 +264,8 @@ TicketBoy.prototype.addTag = function(mongooseId, tag) {
  * @method removeTag
  * Removes tag parameter on Ticket Object.
  *
- * @param 	{ mongoose.Schema.Types.ObjectId } mongooseId - Mongoose _id of Ticket Object to remove tag from.
- * @returns 	{ Promise }
+ * @param 		{ mongoose.Schema.Types.ObjectId } mongooseId - Mongoose _id of Ticket Object to remove tag from.
+ * @returns 	{ Promise }										Resolves with found ticket.
  */
 TicketBoy.prototype.removeTag = function(mongooseId) {
 	return new Promise((resolve, reject) => {
@@ -309,8 +309,8 @@ TicketBoy.prototype.removeTicket = function(mongooseId) {
  * @method removeAllWithTag
  * Deletes all Objects with given tagname.
  *
- * @param 	{ string } tag - We'll use this as reference to remove files.
- * @returns 	{ Promise }	Returns true incase remove was successful.
+ * @param 		{ string } 	tag - 	We'll use this as reference to remove files.
+ * @returns 	{ Promise }			Returns true incase remove was successful.
  */
 TicketBoy.prototype.removeAllWithTag = function(tag) {
 	return new Promise((resolve, reject) => {
@@ -329,8 +329,8 @@ TicketBoy.prototype.removeAllWithTag = function(tag) {
  * @method removeIfExpired
  * Removes a Ticket if it is expired.
  *
- * @param  { mongoose.Schema.Types.ObjectId } mongooseId - Mongoose _id of Ticket Object to check. 
- * @returns { Promise }  Resolves with true if this ticket is expired. Else resolves with false.
+ * @param  	{ mongoose.Schema.Types.ObjectId } mongooseId - Mongoose _id of Ticket Object to check. 
+ * @returns { Promise }  									Resolves with true if this ticket is expired. Else resolves with false.
  */
 TicketBoy.prototype.removeIfExpired = function(mongooseId) {
 	return new Promise((resolve, reject) => {
