@@ -40,11 +40,10 @@ const Ticket = function() {
 	this.__object__	= null;
 };
 
-/** ==== LEADER FUNCTIONS ==== **/
-
 // CREATE
 // ====
 /**
+ * LEADER FUNCTION
  * Add a new ticket to the database.
  *
  * @param 	{ String | Date } start	The start of a booking.
