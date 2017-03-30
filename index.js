@@ -61,7 +61,7 @@ TicketBoy.prototype.createTicket = function(tag, start, end, Object) {
  * @method createTag
  * Creates a new tag to use for further new ticket creations, in case you'd like to tag a lot of tickets together under one tag.
  *
- * @returns 	{string} A new hash string.
+ * @returns 	{ String } A new hash string.
  */
 TicketBoy.prototype.createTag = function() {
 	return TicketBoyFunctions.createHash();
@@ -120,8 +120,8 @@ TicketBoy.prototype.getPeriod = function(mongooseId) {
  * Tickets with that tag and returns true if booked.
  * Warning: This will return the first Object that contains the given time instance.
  *
- * @param { string } tag - Tag on which elements will be searched.
- * @param { date } time - Time Object, we'll check if it is booked for this time instance.
+ * @param { String } tag - Tag on which elements will be searched.
+ * @param { Date } time - Time Object, we'll check if it is booked for this time instance.
  * @returns { Promise } Returns an Object with booked: true with the whole found ticket if something is found. Else it passes in booked: false.
  */
 TicketBoy.prototype.isBooked = function(tag, time) {
@@ -148,7 +148,7 @@ TicketBoy.prototype.isBooked = function(tag, time) {
  * @method findAll
  * Finds all Ticket Objects having the given tag.
  *
- * @param { string } tag - Tag on which elements will be found.
+ * @param { String } tag - Tag on which elements will be found.
  * @returns { Promise } Resolves with found Tickets.
  */
 TicketBoy.prototype.findAll = function(tag) {
