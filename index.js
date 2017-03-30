@@ -3,6 +3,7 @@ const crypto		= require("crypto");
 const TicketModule	= require("./ticket.js")
 const Ticket 		= TicketModule.Ticket;
 const MongooseTicket = TicketModule.MongooseTicket;
+const TicketBoyFunctions = require("./ticketBoyMisc");
 
 
 mongoose.Promise = global.Promise;
@@ -45,7 +46,14 @@ TicketBoy.prototype.createTicket = function(tag, start, end, object) {
 	return ticket.createTicket(tag, start, end, object);
 };
 
-
+/**
+ * Creates a new tag to use for further new ticket creations, in case you'd like to tag a lot of tickets together under one tag.
+ *
+ * returs 	{string} A new hash string.
+ */
+TicketBoy.prototype.createTag = function() {
+	return TicketBoyFunctions.createHash();
+};
 
 // READ 
 // ====

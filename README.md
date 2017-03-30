@@ -5,8 +5,7 @@ A package I use for creating time based tickets and subscriptions. Now you no lo
 To get started start with the following code:
 
 ``` javascript
-
-	var ticketBoy = require("./").TicketBoy();
+	var ticketBoy = require("ticket-boy").TicketBoy();
     var testObj = {};
 
     // This is an absolute requirement.
@@ -41,9 +40,6 @@ To get started start with the following code:
  	.catch(err => {
         console.log(err);
  	});
- 	
-
-
 ```
 
 
